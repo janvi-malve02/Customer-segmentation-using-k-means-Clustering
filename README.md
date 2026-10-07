@@ -58,11 +58,11 @@ Raw transactions were aggregated to **one row per customer** before clustering.
 Raw transactions → Cleaning → Customer-level features → Scaling → K-Means → Evaluation → Segment profiling → Streamlit app
 ```
 
-1. **Data cleaning:** `FILL: e.g. removed missing customer IDs, cancelled orders, duplicates and negative quantities`
-2. **Feature engineering:** `FILL: e.g. Recency, Frequency, Monetary (RFM) per customer`
-3. **Scaling:** `FILL: e.g. StandardScaler / log transform to handle skew`
-4. **Choosing K:** `FILL: e.g. elbow method and silhouette score`
-5. **Clustering:** K-Means with **K = `FILL`**
+1. **Data cleaning:** removed missing customer IDs, cancelled orders, duplicates and negative quantities
+2. **Feature engineering:** Recency, Frequency, Monetary (RFM) per customer
+3. **Scaling:** StandardScaler / log transform to handle skew
+4. **Choosing K:** elbow method and silhouette score
+5. **Clustering:** K-Means with **K = `FILL`** Python
 6. **Profiling:** average feature values per cluster, used to name each segment
 
 ## 📈 Results
