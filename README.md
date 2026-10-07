@@ -13,33 +13,20 @@
 
 ---
 
-## 🎬 Demo
-
-<!-- Drag your Streamlit .mp4 recording into this spot in the GitHub editor. GitHub will upload it and show a playable video here. Then delete this comment. -->
-
-## 📌 Table of Contents
-- [Overview](#-overview)
-- [Dataset](#-dataset)
-- [Methodology](#-methodology)
-- [Results](#-results)
-- [Streamlit App](#-streamlit-app)
-- [Business Insights](#-business-insights)
-- [Limitations](#-limitations)
-- [Future Work](#-future-work)
-- [Getting Started](#-getting-started)
-- [Tech Stack](#-tech-stack)
-
----
-
 ## 🔎 Overview
 
-Treating every customer the same wastes marketing effort. This project uses **unsupervised learning (K-Means clustering)** on retail transaction data to discover groups of customers with similar purchasing behaviour, so a business can target each group differently (for example reward loyal buyers, win back inactive ones, and nurture new ones).
+Treating every customer the same wastes marketing effort. This project applies **unsupervised learning (K-Means clustering)** to retail transaction data to discover groups of customers with similar purchasing behaviour, so a business can treat each group differently: reward loyal buyers, win back inactive ones, and nurture new ones.
 
 **Goals**
-- Clean and transform raw transaction data into customer-level features
-- Find the right number of clusters and justify the choice
-- Describe each segment in plain business language
-- Make the result usable through a simple Streamlit app
+- Turn raw transaction records into customer-level behavioural features
+- Group customers with K-Means clustering
+- Interpret each group in plain business terms
+- Present the result through an interactive Streamlit app
+
+## 🎬 Demo
+
+A screen recording of the Streamlit app is included in this repository:
+[▶️ Watch the Streamlit demo](Streamlit%20-%20Google%20Chrome%202026-04-14%2015-54-42.mp4)
 
 ## 📊 Dataset
 
@@ -50,68 +37,37 @@ Treating every customer the same wastes marketing effort. This project uses **un
 | Content | Transactions of a UK-based online retailer, December 2009 to December 2011 |
 | Size | Over one million transaction records |
 
-Raw transactions were aggregated to **one row per customer** before clustering.
+Raw transactions are aggregated to **one row per customer** before clustering.
 
-## 🧪 Methodology
+## 🧪 Approach
 
 ```
-Raw transactions → Cleaning → Customer-level features → Scaling → K-Means → Evaluation → Segment profiling → Streamlit app
+Raw transactions → Data cleaning → Customer-level features → Scaling → K-Means clustering → Segment profiling → Streamlit app
 ```
 
-1. **Data cleaning:** removed missing customer IDs, cancelled orders, duplicates and negative quantities
-2. **Feature engineering:** Recency, Frequency, Monetary (RFM) per customer
-3. **Scaling:** StandardScaler / log transform to handle skew
-4. **Choosing K:** elbow method and silhouette score
-5. **Clustering:** K-Means with **K = `FILL`** Python
-6. **Profiling:** average feature values per cluster, used to name each segment
+1. **Data cleaning:** prepare the raw transaction data for analysis
+2. **Feature engineering:** summarise each customer's purchasing behaviour
+3. **Scaling:** put features on a comparable scale, since K-Means is distance-based
+4. **Clustering:** group customers with K-Means
+5. **Profiling:** describe each cluster by its typical behaviour
+6. **App:** explore the segments interactively with Streamlit
 
-## 📈 Results
+## 💡 How Businesses Can Use Segments
 
-| Metric | Value |
-|--------|-------|
-| Number of clusters | `FILL` |
-| Silhouette score | `FILL` (remove this row if you did not compute it) |
-
-<!-- Add your plots: elbow curve, cluster scatter plot, segment size chart -->
-<!-- ![Elbow Curve](images/elbow.png) -->
-<!-- ![Clusters](images/clusters.png) -->
-
-| Segment | Description |
-|---------|-------------|
-| `FILL: Segment 1 name` | `FILL: one-line behaviour description` |
-| `FILL: Segment 2 name` | `FILL: one-line behaviour description` |
-| `FILL: add or remove rows to match your K` | |
-
-## 💻 Streamlit App
-
-The project includes an interactive **Streamlit** app (see the demo video above). `FILL: one line on what a user can do, e.g. enter customer values and see which segment they belong to`.
-
-Run it locally:
-
-```bash
-streamlit run app.py
-```
-
-> If your app file has a different name, change `app.py` to match.
-
-## 💡 Business Insights
-
-Segmentation lets a business act differently per group, for example:
-
-- **High-value, frequent customers:** loyalty rewards and early access
+- **High-value, frequent customers:** loyalty rewards and early access to new products
 - **Recently active, low-spend customers:** upsell and cross-sell offers
 - **Lapsed customers:** targeted win-back campaigns
 
 ## ⚠️ Limitations
 
 - K-Means assumes roughly spherical clusters and is sensitive to scaling and outliers
-- The choice of K involves judgment; different K values give different segments
-- Behaviour is based on one retailer's data from 2009 to 2011, so results may not generalise to other businesses or time periods
-- Segments are descriptive, not validated against real campaign outcomes
+- Choosing the number of clusters involves judgment, and different choices give different segments
+- The data covers one retailer between 2009 and 2011, so results may not generalise to other businesses or periods
+- Segments are descriptive and have not been validated against real campaign outcomes
 
 ## 🚀 Future Work
 
-- [ ] Compare with other methods (DBSCAN, hierarchical clustering, Gaussian mixture models)
+- [ ] Compare K-Means with other methods (DBSCAN, hierarchical clustering, Gaussian mixture models)
 - [ ] Add a predictive layer such as churn or customer lifetime value
 - [ ] Deploy the Streamlit app online for a live demo link
 - [ ] Track how customers move between segments over time
@@ -119,19 +75,16 @@ Segmentation lets a business act differently per group, for example:
 ## 🏁 Getting Started
 
 ```bash
-# 1. Clone the repo
+# 1. Clone the repository
 git clone https://github.com/janvi-malve02/Customer-segmentation-using-k-means-Clustering.git
 cd Customer-segmentation-using-k-means-Clustering
 
 # 2. Install dependencies
 pip install -r requirements.txt
-
-# 3. Download the dataset from Kaggle ("Online Retail II") and place it in the project folder
-
-# 4. Open the notebook or run the app
-jupyter notebook
-streamlit run app.py
 ```
+
+3. Download the **Online Retail II** dataset from Kaggle.
+4. Open the project folder and run the notebook or the Streamlit app.
 
 ## 🛠️ Tech Stack
 
